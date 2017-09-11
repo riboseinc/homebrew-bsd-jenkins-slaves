@@ -1,3 +1,5 @@
+require 'requirement'
+
 class VagrantRequirement < Requirement
   fatal true
   cask "vagrant"
