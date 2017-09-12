@@ -172,7 +172,7 @@ class FreebsdJenkinsSlave < Formula
 
       brew services start riboseinc/bsd-jenkins-slaves/freebsd-jenkins-slave
 
-    When you want to remove/rebuild the VM:
+    If you want to remove the VM:
 
       cd #{opt_prefix}/freebsd
       vagrant destroy -y
