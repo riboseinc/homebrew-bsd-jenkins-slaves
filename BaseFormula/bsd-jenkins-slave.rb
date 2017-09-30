@@ -1,7 +1,7 @@
 require File.expand_path("../../requirements/vagrant_requirement.rb", __FILE__)
 require File.expand_path("../../requirements/virtualbox_requirement.rb", __FILE__)
 
-class BsdJenkinsSlave < Formula
+class BsdJenkinsSlave
 
   def bsd_flavor
     raise StandardError.new "This is an ABSTRACT FORMULA, use one of its flavors."
@@ -14,20 +14,6 @@ class BsdJenkinsSlave < Formula
   def bsd_flavor_lower
     self.bsd_flavor.downcase
   end
-
-  # desc "BSD Jenkins Slave"
-  homepage "https://github.com/riboseinc/bsd-jenkins-slaves"
-  # url "https://github.com/riboseinc/rnp/archive/0.8.0.tar.gz"
-  # sha256 "b61ae76934d4d125660530bf700478b8e4b1bb40e75a4d60efdb549ec864c506"
-  head "https://github.com/riboseinc/bsd-jenkins-slaves.git"
-
-  # Custom requirements
-  depends_on VagrantRequirement
-  depends_on VirtualboxRequirement
-
-  # devel do
-  #   version '0.1.0'
-  # end
 
   def install
     (bin/"jenkins-#{bsd_flavor_lower}-up").write <<-EOS.undent
@@ -47,8 +33,6 @@ class BsdJenkinsSlave < Formula
     cp_r (buildpath/"#{bsd_flavor_lower}"), prefix
     cp_r (buildpath/"scripts"), prefix
   end
-
-  plist_options startup: false
 
 #   def plist; <<-EOS.undent
 # <?xml version="1.0" encoding="UTF-8"?>
@@ -195,7 +179,4 @@ class BsdJenkinsSlave < Formula
     EOS
   end
 
-  test do
-    # system "jenkins-#{bsd_flavor_lower}-up", "--version"
-  end
 end
