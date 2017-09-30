@@ -10,14 +10,15 @@ Run this and it's all done.
 ``` sh
 brew tap riboseinc/bsd-jenkins-slaves
 brew install --HEAD freebsd-jenkins-slave
+brew install --HEAD openbsd-jenkins-slave
 # brew install --HEAD netbsd-jenkins-slave
-# brew install --HEAD openbsd-jenkins-slave
 ```
 
 Or:
 
 ``` sh
 brew install --HEAD riboseinc/bsd-jenkins-slaves/freebsd-jenkins-slave
+brew install --HEAD riboseinc/bsd-jenkins-slaves/openbsd-jenkins-slave
 ```
 
 ## Install Tap
@@ -32,6 +33,7 @@ Currently it is a HEAD-only formula, i.e., you must install it using the `--HEAD
 
 ``` sh
 brew install --HEAD freebsd-jenkins-slave
+brew install --HEAD openbsd-jenkins-slave
 ```
 
 If the formula conflicts with one from `Homebrew/homebrew` or another
@@ -39,12 +41,14 @@ tap, you can run:
 
 ``` sh
 brew install --HEAD riboseinc/bsd-jenkins-slaves/freebsd-jenkins-slave
+brew install --HEAD riboseinc/bsd-jenkins-slaves/openbsd-jenkins-slave
 ```
 
 You can also install via URL:
 
 ``` sh
 brew install --HEAD https://raw.githubusercontent.com/riboseinc/homebrew-bsd-jenkins-slaves/master/freebsd-jenkins-slave.rb
+brew install --HEAD https://raw.githubusercontent.com/riboseinc/homebrew-bsd-jenkins-slaves/master/openbsd-jenkins-slave.rb
 ```
 
 ## Acceptable Formulae
