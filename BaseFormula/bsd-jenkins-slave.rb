@@ -172,7 +172,7 @@ module BsdJenkinsSlave
     If you want to remove the VM:
 
       cd #{opt_prefix}/#{bsd_flavor_lower}
-      vagrant destroy -y
+      vagrant destroy -f
 
     Ignore what brew tells you below!
     ----------------v----------------
