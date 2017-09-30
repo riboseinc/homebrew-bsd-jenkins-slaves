@@ -1,7 +1,7 @@
 require File.expand_path("../../requirements/vagrant_requirement.rb", __FILE__)
 require File.expand_path("../../requirements/virtualbox_requirement.rb", __FILE__)
 
-class BsdJenkinsSlave
+module BsdJenkinsSlave
 
   def bsd_flavor
     raise StandardError.new "This is an ABSTRACT FORMULA, use one of its flavors."
