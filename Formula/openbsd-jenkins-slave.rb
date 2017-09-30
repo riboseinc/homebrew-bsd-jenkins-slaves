@@ -1,6 +1,6 @@
 require File.expand_path("../bsd-jenkins-slave.rb", __FILE__)
 
-class FreebsdJenkinsSlave < BsdJenkinsSlave
+class OpenbsdJenkinsSlave < BsdJenkinsSlave
   def bsd_flavor
     "OpenBSD"
   end
