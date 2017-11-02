@@ -150,14 +150,14 @@ module BsdJenkinsSlave
 
     Step 1: Configure your JENKINS_URL / JENKINS_SECRET.
 
-    export FREEBSD_SLAVE_PLIST=#{opt_prefix/(plist_name+".plist")}
+    export #{bsd_flavor_caps}_SLAVE_PLIST=#{opt_prefix/(plist_name+".plist")}
     sed -i.bak \\
       's/REPLACE_ME_JENKINS_URL/https:\\/\\/my-jenkins.com\\/computer\\/agentname\\/slave-agent.jnlp// \\
-      ${FREEBSD_SLAVE_PLIST}
+      ${#{bsd_flavor_caps}_SLAVE_PLIST}
 
     sed -i.bak \\
       's/REPLACE_ME_JENKINS_SECRET/bd38130d1412b54287a00a3750bd100c/' \\
-      ${FREEBSD_SLAVE_PLIST}
+      ${#{bsd_flavor_caps}_SLAVE_PLIST}
 
     Step 2: Start VM (Vagrant+VirtualBox) via brew services
 
@@ -174,8 +174,11 @@ module BsdJenkinsSlave
       cd #{opt_prefix}/#{bsd_flavor_lower}
       vagrant destroy -f
 
-    Ignore what brew tells you below!
-    ----------------v----------------
+    *Ignore what brew tells you below!*
+    -------------vvvvvvv-------------
+     \------------vvvvv------------/
+      \------------vvv------------/
+       \------------v------------/
     EOS
   end
 
