@@ -16,7 +16,7 @@ module BsdJenkinsSlave
   end
 
   def install
-    (bin/"jenkins-#{bsd_flavor_lower}-up").write <<-EOS.undent
+    (bin/"jenkins-#{bsd_flavor_lower}-up").write <<~EOS
       #!/bin/bash
       export PATH=$PATH:/usr/local/bin
 
@@ -34,7 +34,7 @@ module BsdJenkinsSlave
     cp_r (buildpath/"scripts"), prefix
   end
 
-#   def plist; <<-EOS.undent
+#   def plist; <<~EOS
 # <?xml version="1.0" encoding="UTF-8"?>
 # <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 # <plist version="1.0">
@@ -66,7 +66,7 @@ module BsdJenkinsSlave
 #   end
 
   # VBoxManage lives in /usr/local/bin, we need to include the PATH
-  def plist; <<-EOS.undent
+  def plist; <<~EOS
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -143,7 +143,7 @@ module BsdJenkinsSlave
   #   sudo install -m 600 -g wheel -o root #{opt_prefix/(plist_name+".plist")} /Library/LaunchDaemons
   #   sudo launchctl load -w /Library/LaunchDaemons/#{plist_name}.plist
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     WARNING:
       You must configure the JENKINS_URL and JENKINS_SECRET environment
       variables in this file for it to work:

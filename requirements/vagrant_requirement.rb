@@ -8,7 +8,7 @@ class VagrantRequirement < Requirement
   satisfy { which("vagrant") }
 
   def message
-    s = <<-EOS.undent
+    s = <<~EOS
       Vagrant must be installed for Homebrew to install this formula.
       Make sure that "vagrant" is in your PATH before proceeding.
     EOS
